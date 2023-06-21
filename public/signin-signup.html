@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Sign in | Signup Now</title>
     <link rel="stylesheet" href="path/to/font-awesome/css/font-awesome.min.css">
-    <link rel="stylesheet" href="/public/signin.css">
+    <link rel="stylesheet" href="signin.css">
 </head>
 <body>
     
@@ -83,7 +83,7 @@
              -->
     
 </body>
-<script src="/public/app.js"></script>
+<script src="app.js"></script>
 <script type="module">
     // Import the functions you need from the SDKs you need
     import { initializeApp } from "https://www.gstatic.com/firebasejs/9.22.2/firebase-app.js";
@@ -111,7 +111,6 @@
     const auth = getAuth(app);
 
     signUp.addEventListner('click', (e) => {
-        signInWithRedirect(auth, provider);
 
         getRedirectResult(auth)
   .then((result) => {
@@ -121,11 +120,6 @@
 
     // The signed-in user info.
     const user = result.user;
-
-    //name = displayName
-    //email = email
-
-    alert(user.displayName);
     // IdP data available using getAdditionalUserInfo(result)
     // ...
   }).catch((error) => {
